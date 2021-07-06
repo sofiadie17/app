@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+<!--- tener en cuenta que si copio esta aplicacion autenticacion en otro proyecto, puedo copy-paste
+pero voy a tener problemas al heredar la plantilla maestra porque forma parte de otra aplicacion tecnicamente--->
+
+
+{% block title %}Registro{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="POST" action="" class="mt-5" autocomplete="off">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <button type="submit" class="btn btn-success">Crear Cuenta</button>
+    </form>
+{% endblock %}
